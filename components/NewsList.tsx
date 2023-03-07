@@ -16,7 +16,7 @@ const NewsList = ({content,limit}:any)=>{
                     const { title,urlToImage,url,author,publishedAt } = news;
                     return(
                        i < limit ?
-                       <li className='relative desktop:basis-[45%] bg-grey basis-full mobile:basis-full'>
+                       <li className='relative desktop:basis-[45%] bg-grey basis-full mobile:basis-full' key={i}>
                        <img
                    src={`${urlToImage? urlToImage : './news.png'}`}
                    alt={title}

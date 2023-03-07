@@ -2,13 +2,12 @@ import React from 'react';
 import LocaleDropdown from '@/components/ui/LocaleDropdown';
 import Image from 'next/image';
 import Link from 'next/link';
-import { AddressList, FooterProps } from '@/interfaces';
+import {  FooterProps } from '@/interfaces';
 import Instagram from '@/assets/icons/instagram.svg';
 import Linkedin from '@/assets/icons/linkedin.svg';
 import Wrapper from '@/components/ui/Wrapper';
 
 const Footer = ({
-  footerData,
   localeData,
 }: FooterProps) => {
   return (

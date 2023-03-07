@@ -65,9 +65,9 @@ const Header = ({ headerData, localeData }: HeaderProps) => {
                 Home
               </Link>
             </li>
-            {headerData?.navLinks?.map((link: Links) => (
+            {headerData?.navLinks?.map((link: Links,i:number) => (
               <li
-                key={link.id}
+                key={i}
                 className='heading-4 tablet:text-lg'
               >
                 <Link

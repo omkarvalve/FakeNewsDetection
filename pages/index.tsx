@@ -16,8 +16,9 @@ const Home = () => {
 
   const scrollHandler = () => {
     const footer = document.getElementById('footer');
-    const height = Number(footer?.offsetHeight) - 5;
-    const offset = Number(footer?.getBoundingClientRect().top);
+    const height = Number(footer?.offsetHeight);
+    const offset = Number(footer?.getBoundingClientRect().top)-1000;
+    console.log(height,offset)
 
     if (height > offset) {
       setLimit(prev => prev + initialLimit);

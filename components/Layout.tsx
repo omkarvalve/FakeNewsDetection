@@ -6,7 +6,6 @@ import { LayoutProps } from '@/interfaces';
 const Layout = ({
   children,
   headerData,
-  footerData,
   localeData,
 }: LayoutProps) => {
   return (
@@ -15,7 +14,6 @@ const Layout = ({
       <Header headerData={headerData} localeData={localeData} />
       {children}
       <Footer
-        footerData={footerData}
         localeData={localeData}
       />
     </>
