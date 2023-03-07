@@ -43,18 +43,15 @@ const HeroSection = ({ content }: any) => {
           content.length > 0 ?
             content?.map(
               (slide: HeroSlideProps, index: number) => (
-                <SwiperSlide key={slide?.id}>
+                <SwiperSlide key={index}>
                   <HeroSlide
-                    index={index}
                     slide={slide}
-                    key={index}
                   />
                 </SwiperSlide>
               ),
             ) :
             <HeroSlide
-              index={1}
-              slide={{urlToImage:'https://th.bing.com/th/id/R.f768c15607084a0b1e1a7802259d889d?rik=PW1FJqYdFpgi0w&riu=http%3a%2f%2fimg.photobucket.com%2falbums%2fv328%2fClayskater%2fGreetings%2fBanners%2fnews-banner3.jpg&ehk=TrZpgVN4FsukXfmwEcTN1E%2bvltVb0%2bWXUoGFHRCQQo8%3d&risl=&pid=ImgRaw&r=0'}}
+              slide={{ urlToImage: 'https://th.bing.com/th/id/R.f768c15607084a0b1e1a7802259d889d?rik=PW1FJqYdFpgi0w&riu=http%3a%2f%2fimg.photobucket.com%2falbums%2fv328%2fClayskater%2fGreetings%2fBanners%2fnews-banner3.jpg&ehk=TrZpgVN4FsukXfmwEcTN1E%2bvltVb0%2bWXUoGFHRCQQo8%3d&risl=&pid=ImgRaw&r=0' }}
             />
         }
       </Swiper>

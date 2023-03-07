@@ -3,12 +3,11 @@ import { HeroSlideProps } from '@/components/HeroSection';
 import Button from '@/components/ui/CtaButton';
 
 interface HeroCard {
-  index: number;
   slide: any
 }
 
 const HeroSlide = ({ slide }: HeroCard) => {
-  const { title,urlToImage,url,author,publishedAt } = slide;
+  const { title, urlToImage, url, author, publishedAt } = slide;
 
   return (
     <BackgroundImage src={urlToImage} alt={title}>
