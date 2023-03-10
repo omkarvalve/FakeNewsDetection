@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, request,json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import PassiveAggressiveClassifier
 import pickle
@@ -21,19 +21,14 @@ def fake_news_det(news):
     prediction = loaded_model.predict(vectorized_input_data)
     return prediction
 
-@app.route('/')
-def home():
-    return render_template('index.html')
-
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        message = request.form['message']
-        pred = fake_news_det(message)
-        print(pred)
-        return render_template('index.html', prediction=pred)
+        obj = json.loads(request.data)
+        pred = fake_news_det(obj['input'])
+        return pred[0],200
     else:
-        return render_template('index.html', prediction="Something went wrong")
+        return "Something went wrong",404
 
 if __name__ == '__main__':
     app.run(debug=True)
