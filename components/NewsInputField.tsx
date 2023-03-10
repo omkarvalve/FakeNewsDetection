@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import Wrapper from "./ui/Wrapper";
+import { useRef, useState } from 'react';
+import Wrapper from './ui/Wrapper';
 import Loading from '@/assets/svgs/icons/loading.svg';
 
 const NewsInputField = ({ setInput, result }: any) => {
@@ -35,7 +35,7 @@ const NewsInputField = ({ setInput, result }: any) => {
                 </form>
                 <span className='text-white heading-5-small'>Result: </span>
                 <p className={`pt-5 heading-6 ${result === 'REAL' ? ' text-[#41e30b] ' : ' text-[#f00] '}`}>
-                    {result && !isEmpty ? result === 'REAL' ? 'This news is probably real.' : 'This news is probably fake ' : isEmpty ? null : <Loading className='animate-spin'/>}</p>
+                    {result && !isEmpty ? result === 'REAL' ? 'This news is probably real.' : 'This news is probably fake ' : isEmpty ? null : <Loading className='animate-spin mx-auto' />}</p>
             </Wrapper>
         </section>
     )
