@@ -26,8 +26,8 @@ const Home = () => {
   }
 
   useEffect(()=>{
-    apiHandler('https://newsapi.org/v2/top-headlines?country=us',(data:any)=>setTopNews(data) );
-    apiHandler('https://newsapi.org/v2/top-headlines?country=in',(data:any)=>setNews(data));
+    apiHandler('https://newsapi.org/v2/top-headlines?country=us&apikey=8dbeab5a4d3b42ca84bbaa89ea8b3515',(data:any)=>setTopNews(data),'get','' );
+    apiHandler('https://newsapi.org/v2/top-headlines?country=in&apikey=8dbeab5a4d3b42ca84bbaa89ea8b3515',(data:any)=>setNews(data),'get','');
     window.addEventListener('scroll', scrollHandler);
   },[]);
 

@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-const axiosFetcher = axios.create({
-    baseURL:'https://newsapi.org/v2'
-});
 
-export const apiHandler = (url:any,setData:any)=>{
-    const apikey = '&apikey=8dbeab5a4d3b42ca84bbaa89ea8b3515';
-    axiosFetcher.get(url+apikey).then((res)=>setData(res.data.articles)).catch((e)=>setData([]));
+export const apiHandler = (url: string, setData: any, method: string, input: string) => {
+    const apiFetcher = (url: string) => method === 'get' ? axios.get(url) : axios.post(url, { input: input });
+    apiFetcher(url).then((res) => setData(method === 'get' ? res.data.articles : res.data )).catch((e) => setData([]));
 }

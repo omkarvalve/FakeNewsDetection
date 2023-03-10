@@ -3,6 +3,7 @@ import Layout from '@/components/Layout';
 import NewsInputField from '@/components/NewsInputField';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { apiHandler } from '@/hooks/apiHandler';
 
 const FakeNewsDetection = () => {
 
@@ -10,7 +11,8 @@ const FakeNewsDetection = () => {
     const [result, setResult] = useState(null);
 
     const getResult = (data: string) => {
-        console.log(data);
+        // setResult(null);
+        data !== '' ? apiHandler('http://localhost:5000/predict', setResult, 'post', data) : alert('Please provide some text');
     }
 
     return (
