@@ -29,7 +29,7 @@ const Header = ({ headerData, localeData }: HeaderProps) => {
     <header className='sticky top-0 z-50 bg-black py-[18px] desktop:py-6'>
       <div className='mx-auto flex w-[93%] max-w-[1640px] flex-row items-center justify-between'>
         <h1 className='z-10 text-2xl font-bold'>
-          <Link href='/' onClick={handleNavLinkClick}>
+          <Link href='/' onClick={handleNavLinkClick} title='Fake News Detector'>
             <Image
               src='/favicon.ico'
               alt='Logo'

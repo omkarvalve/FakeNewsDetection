@@ -19,7 +19,7 @@ const ScrollUp = () => {
   }, [])
 
   return (
-    <Link href='#' title='Top' className={`desktop:hover:opacity-100 opacity-60 mobile:opacity-100  ${isVisible ? 'fixed' : 'hidden'}  right-[3.8%] mobile:right-[3%] bottom-[20%] mobile:bottom-[15.7%] z-20 delay-300 ease-in`} onClick={scrollTop}
+    <Link href='#' title='Top' className={`desktop:hover:opacity-100 opacity-60 mobile:opacity-100  ${isVisible ? 'fixed' : 'hidden'}  right-[3.8%] mobile:right-[3%] bottom-[20px] mobile:bottom-[15.7px] z-20 delay-300 ease-in`} onClick={scrollTop}
     >
       <UpArrow />
     </Link>

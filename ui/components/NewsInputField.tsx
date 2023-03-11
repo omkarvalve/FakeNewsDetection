@@ -10,7 +10,7 @@ const NewsInputField = ({ setInput, result }: any) => {
 
     const inputHandler = (e: any) => {
         e.preventDefault();
-        setInput(false);
+        inputValue.value !== '' ? setIsEmpty(false) : setIsEmpty(true);
         setInput(inputValue.value);
     }
 

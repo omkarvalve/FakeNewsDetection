@@ -24,7 +24,7 @@ const HeroSlide = ({ slide }: HeroCard) => {
             </h5>
             <p className='body-3 tablet:body-2'>{publishedAt}</p>
             <div>
-              <Button buttonType='link' intent='secondary' text='view news' linkTitle={title} ctaUrl={url} customStyling='body-3 tablet:body-2' />
+              <Button buttonType='link' intent='secondary' text='View News' linkTitle={title} ctaUrl={url} customStyling='body-3 tablet:body-2' />
             </div>
           </div>
         </div>

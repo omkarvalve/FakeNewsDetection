@@ -11,7 +11,7 @@ const FakeNewsDetection = () => {
     const [result, setResult] = useState(null);
 
     const getResult = (data: string) => {
-        // setResult(null);
+        setResult(null);
         data !== '' ? apiHandler('http://localhost:5000/predict', setResult, 'post', data) : alert('Please provide some text');
     }
 

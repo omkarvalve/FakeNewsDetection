@@ -15,7 +15,7 @@ const Footer = ({
       <Wrapper>
         <div className='grid grid-cols-12 child:col-span-full'>
           <figure className='flex items-center justify-center border-t border-t-white pt-16 pb-12 tablet:justify-start'>
-            <Link href='/' title='Studios'>
+            <Link href='/' title='Fake News Detector'>
               <Image
                 src='/favicon.ico'
                 alt='Logo'
@@ -26,7 +26,7 @@ const Footer = ({
           </figure>
           {/* Copyright text and social icons */}
           <div className='flex flex-col-reverse items-center justify-center gap-5 tablet:flex-row tablet:justify-between'>
-            <p className='caption'>© 2023 FAKE NEWS DETECTION -CDAC, All rights reserved</p>
+            <p className='caption mobile:text-center'>© 2023 FAKE NEWS DETECTION -CDAC, All rights reserved</p>
             <div className='flex items-center justify-center'>
               <LocaleDropdown localeData={localeData} />
               <div className='ml-0 flex items-center justify-center gap-6 tablet:ml-12'>

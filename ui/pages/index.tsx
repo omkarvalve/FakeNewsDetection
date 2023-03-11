@@ -5,6 +5,8 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { apiHandler } from '@/hooks/apiHandler';
 import NewsList from '@/components/NewsList';
+import Loading from "@/assets/svgs/icons/loading.svg";
+import ScrollUp from '@/components/ui/ScrollUp';
 
 const Home = () => {
   const { t } = useTranslation('common');
@@ -12,7 +14,8 @@ const Home = () => {
   const [topNews,setTopNews] = useState([]);
   const [news,setNews] = useState([]);
   const initialLimit = 4;
-  const [limit,setLimit] = useState(initialLimit)
+  const [limit,setLimit] = useState(initialLimit);
+  const [domLoaded,setDomLoaded] = useState(false);
 
   const scrollHandler = () => {
     const footer = document.getElementById('footer');
@@ -29,6 +32,7 @@ const Home = () => {
     apiHandler('https://newsapi.org/v2/top-headlines?country=us&apikey=8dbeab5a4d3b42ca84bbaa89ea8b3515',(data:any)=>setTopNews(data),'get','' );
     apiHandler('https://newsapi.org/v2/top-headlines?country=in&apikey=8dbeab5a4d3b42ca84bbaa89ea8b3515',(data:any)=>setNews(data),'get','');
     window.addEventListener('scroll', scrollHandler);
+    setDomLoaded(true);
   },[]);
 
 
@@ -38,8 +42,15 @@ const Home = () => {
       footerData={t('footer', { returnObjects: true })}
       localeData={t('locales', { returnObjects: true })}
     >
-        <HeroSection content={topNews}/>
-        <NewsList content={news} limit={limit}/>
+        {
+          domLoaded ?
+          <>
+          <ScrollUp />
+          <HeroSection content={topNews}/>
+          <NewsList content={news} limit={limit}/>
+          </> 
+        : <Loading className='mx-auto'/>
+        }
     </Layout>
   );
 };
