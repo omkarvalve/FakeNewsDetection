@@ -1,6 +1,6 @@
-# Shutterstock Studios
+# Fake news detection
 
-Redesign and build of the Shutterstock Studios website with a new design system as well as new and updated content.
+Ui of fake news detection
 
 ## Tech Stack
 
