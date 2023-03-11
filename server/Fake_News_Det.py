@@ -4,8 +4,10 @@ from sklearn.linear_model import PassiveAggressiveClassifier
 import pickle
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 tfvect = TfidfVectorizer(stop_words='english', max_df=0.7)
 loaded_model = pickle.load(open('model.pkl', 'rb'))
 dataframe = pd.read_csv('news.csv')
@@ -20,6 +22,7 @@ def fake_news_det(news):
     vectorized_input_data = tfvect.transform(input_data)
     prediction = loaded_model.predict(vectorized_input_data)
     return prediction
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
